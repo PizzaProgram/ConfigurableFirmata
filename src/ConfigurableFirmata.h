@@ -22,7 +22,7 @@
  * Query using the REPORT_VERSION message.
  */
 #define FIRMATA_PROTOCOL_MAJOR_VERSION  2 // for non-compatible changes
-#define FIRMATA_PROTOCOL_MINOR_VERSION  7 // for backwards compatible changes
+#define FIRMATA_PROTOCOL_MINOR_VERSION  8 // for backwards compatible changes
 #define FIRMATA_PROTOCOL_BUGFIX_VERSION 0 // for bugfix releases
 
 /*
@@ -32,8 +32,8 @@
  * Query using the REPORT_FIRMWARE message.
  */
 #define FIRMATA_FIRMWARE_MAJOR_VERSION  3 // for non-compatible changes
-#define FIRMATA_FIRMWARE_MINOR_VERSION  3 // for backwards compatible changes
-#define FIRMATA_FIRMWARE_BUGFIX_VERSION 1 // for bugfix releases
+#define FIRMATA_FIRMWARE_MINOR_VERSION  4 // for backwards compatible changes
+#define FIRMATA_FIRMWARE_BUGFIX_VERSION 0 // for bugfix releases
 
 #ifdef LARGE_MEM_DEVICE
 #define MAX_DATA_BYTES         252 // The ESP32 has enough RAM so we can reduce the number of packets, but the value must not exceed 2^8 - 1, because many methods use byte-indexing only
@@ -91,7 +91,7 @@
 #define REPORT_FIRMWARE         0x79 // report name and version of the firmware
 #define SAMPLING_INTERVAL       0x7A // set the poll rate of the main loop
 #define SCHEDULER_DATA          0x7B // send a createtask/deletetask/addtotask/schedule/querytasks/querytask request to the scheduler
-#define ANALOG_CONFIG           0x7C // (reserved)
+#define SAMPLING_INTERVAL_QUERY 0x7C // request the current sampling interval
 #define FREQUENCY_COMMAND       0x7D // Command for the Frequency module
 #define SYSEX_NON_REALTIME      0x7E // MIDI Reserved for non-realtime messages
 #define SYSEX_REALTIME          0x7F // MIDI Reserved for realtime messages
